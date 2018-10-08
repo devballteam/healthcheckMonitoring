@@ -1,5 +1,7 @@
 html
   head
-    title= title
+    title= "DEVBALL monitoring"
   body
-    h1= message
+    ul
+      each job in jobs.length ? jobs : ['There are no values']
+        li= job.name + ' ' + job.color + '' + job.order
