@@ -13,10 +13,7 @@ app.set('view engine', 'pug');
 app.get('/', (req, res) => {
     fetcher(url)
     .then(response => sorter(response.jobs))
-    .then(sorted => {
-        // console.log('data',data.jobs);
-        res.render('index', {jobs: sorted});
-    })
+    .then(jobs => res.render('index', {jobs}))
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
