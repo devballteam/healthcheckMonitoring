@@ -9,6 +9,7 @@ const fetcher = require(`${process.cwd()}/service/fetcher`);
 const sorter = require(`${process.cwd()}/service/sorter`);
 
 app.set('view engine', 'pug');
+app.use(express.static(require('path').join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     fetcher(url)

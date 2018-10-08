@@ -1,0 +1,36 @@
+.container-fluid {
+    padding: 0;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    height: 100%;
+    padding: 2px;
+}
+li {
+    width: 32%;
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+}
+
+.notbuilt {
+    background: #75888a;
+}
+.blue {
+    background: #2AA198;
+}
+.red {
+    background: #c42b75;
+}
+.aborted {
+    background: #073642;
+}
+.blue_animate {
+    -webkit-animation: progress-bar-stripes 1s linear infinite;
+    animation: progress-bar-stripes 1s linear infinite;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-size: 1rem 1rem;
+}

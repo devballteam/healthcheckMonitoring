@@ -2,9 +2,9 @@
 
 const orders = [
     {order: 100, rules: ['prod', 'prs']},
-    {order: 90, rules: ['ost']},
-    {order: 10, rules: ['stage', 'preprod']},
-    {order: 1, rules: ['dev']}
+    {order: 90,  rules: ['ost']},
+    {order: 10,  rules: ['stage', 'preprod']},
+    {order: 1,   rules: ['dev']}
 ];
 
 function sorter (jobs) {

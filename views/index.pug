@@ -1,7 +1,16 @@
 html
   head
     title= "DEVBALL monitoring"
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/solar/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='styles.css')
   body
-    ul
-      each job in jobs.length ? jobs : ['There are no values']
-        li= job.name + ' ' + job.color + '' + job.order
+    nav(class='navbar navbar-dark bg-dark')
+        h1='DEVBALL Monitoring'
+    main(class='container-fluid')
+        ul
+            each job in jobs.length ? jobs : ['There are no values']
+                li(class=job.color)
+                    strong= job.name
+                    span= job.color
+                    span= job.order
