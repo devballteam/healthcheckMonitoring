@@ -5,8 +5,9 @@ const orders = [
     {order: 90,  rules: ['ost', 'wab-portal']},
     {order: 80,  rules: ['api']},
     {order: 70,  rules: ['portal']},
-    {order: 10,  rules: ['stage', 'preprod']},
+    {order: 50,  rules: ['stage', 'preprod']},
     {order: 1,   rules: ['dev']},
+    {order: -50,   rules: ['features-regression']},
     {order: -100,   rules: ['notbuilt', 'oddsstore-portal']}
 ];
 

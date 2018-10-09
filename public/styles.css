@@ -1,3 +1,6 @@
+h1 {
+    font-size: 1.5em;
+}
 .container-fluid {
     padding: 0;
 }
@@ -11,7 +14,7 @@ ul {
 li {
     width: 24%;
     list-style: none;
-    padding: 15px 10px;
+    padding: 0 15px 10px 0;
     margin: 5px;
     color: white;
 }
@@ -43,10 +46,19 @@ li {
 
 .job-name {
     display: block;
-    margin-top: 5px;
+    margin: 15px 0 15px 15px;
     font-size: 30px;
 }
 .badge-pill {
     border-radius: 0;
     font-size: 26px;
+}
+.badge-env-Stage,
+.badge-env-Stage-origin,
+.badge-env-PreProd {
+    background-color: #A8A8A8;
+}
+.badge-env-Dev,
+.badge-env-Dev2 {
+    background-color: #965A38;
 }
