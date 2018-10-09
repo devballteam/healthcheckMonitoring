@@ -2,9 +2,12 @@
 
 const orders = [
     {order: 100, rules: ['prod', 'prs']},
-    {order: 90,  rules: ['ost']},
+    {order: 90,  rules: ['ost', 'wab-portal']},
+    {order: 80,  rules: ['api']},
+    {order: 70,  rules: ['portal']},
     {order: 10,  rules: ['stage', 'preprod']},
-    {order: 1,   rules: ['dev']}
+    {order: 1,   rules: ['dev']},
+    {order: -100,   rules: ['notbuilt', 'oddsstore-portal']}
 ];
 
 function sorter (jobs) {
@@ -14,7 +17,7 @@ function sorter (jobs) {
 
         jobNameArray.forEach((namePart) => { // to be optimised
             orders.forEach(order => {
-                if (order.rules.includes(namePart)) {
+                if (order.rules.includes(namePart) || order.rules.includes(job.color)) {
                     job.order += order.order;
                 }
             });
