@@ -7,6 +7,7 @@ html
   body
     nav(class='navbar navbar-dark bg-dark')
         h1='DEVBALL Monitoring'
+        div
     main(class='container-fluid')
         ul
             each job in jobs.length ? jobs : ['There are no values']
@@ -14,8 +15,8 @@ html
                     span(class='badge badge-pill badge-light')= job.project
                     span(class='badge badge-pill badge-primary badge-env-' + job.environment)= job.environment
                     strong(class='job-name')= job.jobName
-//- script.
-//-     setInterval(() => {
-//-         window.location.reload(false); 
-//-     }, 2000)
+script.
+    setInterval(() => {
+        window.location.reload(false); 
+    }, 2000)
     

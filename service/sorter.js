@@ -11,8 +11,13 @@ const orders = [
     {order: -100,   rules: ['notbuilt', 'oddsstore-portal']}
 ];
 
+function filterOutcome (item) {
+    return item.color !== 'blue' && item.color !== 'blue_anime' && item.color !== 'notbuilt'
+}
+
 function sorter (jobs) {
-    jobs.map((job) => {
+    jobs = jobs
+    .map((job) => {
         const jobNameArray = job.name.toLowerCase().split('_');
         job.order = 1;
 
@@ -25,6 +30,12 @@ function sorter (jobs) {
         });
         
         return job;
+    })
+    .filter((item) => {
+        if (filterOutcome(item)) {
+            return item;
+        }
+        return false;
     });
 
     return jobs.sort((a,b) => a.order - b.order).reverse();
