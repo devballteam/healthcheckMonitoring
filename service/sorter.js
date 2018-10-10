@@ -12,7 +12,7 @@ const orders = [
 ];
 
 function filterOutcome (item) {
-    return item.color !== 'blue' && item.color !== 'blue_anime' && item.color !== 'notbuilt'
+    return item.color !== 'blue' && item.color !== 'blue_anime' && item.color !== 'notbuilt';
 }
 
 function sorter (jobs) {

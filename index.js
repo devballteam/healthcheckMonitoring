@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 8090;
 const url = "http://qajenkins3.ptv.com:8080/view/Devball/api/json"; //move to config?
 
 const fetcher = require(`${process.cwd()}/service/fetcher`);

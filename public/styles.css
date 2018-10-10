@@ -5,17 +5,12 @@ h1 {
     padding: 0;
 }
 ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: stretch;
-    height: 100%;
     padding: 2px;
 }
 li {
-    width: 24%;
     list-style: none;
-    padding: 0 15px 10px 0;
-    margin: 5px;
+    padding: 10px 15px 10px 0;
+    margin: 10px 0;
     color: white;
 }
 
@@ -45,13 +40,12 @@ li {
 }
 
 .job-name {
-    display: block;
-    margin: 15px 0 15px 15px;
     font-size: 30px;
+    float: right;
 }
 .badge-pill {
     border-radius: 0;
-    font-size: 26px;
+    font-size: 30px;
 }
 .badge-env-Stage,
 .badge-env-Stage-origin,
