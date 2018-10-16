@@ -2,12 +2,13 @@
 
 const orders = [
     {order: 100, rules: ['prod', 'prs']},
-    {order: 90,  rules: ['ost', 'wab-portal']},
+    {order: 90,  rules: ['ost']},
     {order: 80,  rules: ['api']},
     {order: 70,  rules: ['portal']},
     {order: 50,  rules: ['stage', 'preprod']},
-    {order: 1,   rules: ['dev']},
-    {order: -50,   rules: ['features-regression']},
+    {order: 40,  rules: ['wab-portal', 'rb-portal', 'pp2']},
+    {order: 5,   rules: ['dev']},
+    {order: -30,   rules: ['features-regression']},
     {order: -100,   rules: ['notbuilt', 'oddsstore-portal']}
 ];
 

@@ -10,10 +10,11 @@ html
     main(class='container-fluid')
         ul
             each job in jobs.length ? jobs : ['There are no values']
-                li(class=job.color)
+                li(class=job.color data-order=job.order)
                     span(class='badge badge-pill badge-light')= job.project
                     span(class='badge badge-pill badge-primary badge-env-' + job.environment)= job.environment
                     strong(class='job-name')= job.jobName
+
 script.
     setInterval(() => {
         window.location.reload(false); 
