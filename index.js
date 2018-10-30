@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const port = 8090;
 const qaJenkinsUrl = "http://qajenkins3.ptv.com:8080/view/Devball/api/json"; //move to config?
-const mtpJenkinsUrl = "http://10.216.99.56:8080/view/MTP%20PreProd%20Regression/api/json";
+const mtpJenkinsUrl = "http://10.216.99.56:8080/view/Devball/api/json";
 
 
 const fetcher = require(`${process.cwd()}/service/fetcher`);

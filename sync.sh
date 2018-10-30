@@ -1,0 +1,1 @@
+rsync -a -v -e ssh ~/Repo/others/node-healthcheck-monitoring qa@10.216.99.56:/Users/qa/apps --exclude '.git' --exclude 'node_modules'
