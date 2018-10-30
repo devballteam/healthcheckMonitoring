@@ -11,7 +11,7 @@ const orders = [
     {order: -30,   rules: ['features-regression']},
     {order: -100,   rules: ['notbuilt', 'oddsstore-portal']}
 ];
-const statuses = ['blue', 'blue_anime', 'notbuilt', 'disabled'];
+const hiddenStatuses = ['blue', 'blue_anime', 'notbuilt', 'disabled'];
 
 function sorter (jobs) {
     jobs = jobs
@@ -30,7 +30,7 @@ function sorter (jobs) {
         return job;
     })
     .filter((item) => {
-        if (!statuses.includes(item.color)) {
+        if (!hiddenStatuses.includes(item.color)) {
             return item;
         }
         return false;
