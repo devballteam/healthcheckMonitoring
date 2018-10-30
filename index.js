@@ -3,9 +3,10 @@
 const express = require('express');
 const app = express();
 const port = 8090;
-const qaJenkinsUrl = "http://qajenkins3.ptv.com:8080/view/Devball/api/json"; //move to config?
-const mtpJenkinsUrl = "http://10.216.99.56:8080/view/Devball/api/json";
-
+const additionalParams = '?tree=jobs[name,color,healthReport[description,score,iconUrl]]';
+const qaJenkinsUrl = `http://qajenkins3.ptv.com:8080/view/Devball/api/json${additionalParams}`; //move to config?
+const mtpJenkinsUrl = `http://10.216.99.56:8080/view/Devball/api/json${additionalParams}`;
+const qouteApi = 'https://geek-jokes.sameerkumar.website/api'
 
 const fetcher = require(`${process.cwd()}/service/fetcher`);
 const sorter = require(`${process.cwd()}/service/sorter`);

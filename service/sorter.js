@@ -9,7 +9,7 @@ const orders = [
     {order: 40,  rules: ['wab-portal', 'rb-portal', 'pp2']},
     {order: 5,   rules: ['dev']},
     {order: -30,   rules: ['features-regression']},
-    {order: -100,   rules: ['notbuilt', 'oddsstore-portal']}
+    {order: -100,   rules: ['oddsstore-portal']}
 ];
 const hiddenStatuses = ['blue', 'blue_anime', 'notbuilt', 'disabled'];
 

@@ -13,7 +13,12 @@ html
                 li(class=job.color data-order=job.order)
                     span(class='badge badge-pill badge-light')= job.project
                     span(class='badge badge-pill badge-primary badge-env-' + job.environment)= job.environment
-                    strong(class='job-name')= job.jobName
+                    div(class='job-status')
+                        strong(class='job-name')
+                            =job.jobName 
+                            img(src='http://10.216.99.56:8080/static/2ade8cde/images/32x32/' + job.healthReport[0].iconUrl)
+                        small(class='healthcheck')= job.healthReport[0].description
+                        
 
 script.
     setInterval(() => {
