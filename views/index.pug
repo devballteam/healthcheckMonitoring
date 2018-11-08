@@ -8,6 +8,11 @@ html
     nav(class='navbar navbar-dark bg-dark')
         h1='DEVBALL Monitoring'
     main(class='container-fluid')
+    if !jobs.length
+        p(class='alert alert-success')
+            strong='GUD!'
+            ='All Jenkins jobs are green!'
+    else
         ul
             each job in jobs.length ? jobs : ['There are no values']
                 li(class=job.color data-order=job.order)
@@ -16,8 +21,10 @@ html
                     div(class='job-status')
                         strong(class='job-name')
                             =job.jobName 
-                            img(src='http://10.216.99.56:8080/static/2ade8cde/images/32x32/' + job.healthReport[0].iconUrl)
-                        small(class='healthcheck')= job.healthReport[0].description
+                            if job.healthReport
+                                img(src='http://10.216.99.56:8080/static/2ade8cde/images/32x32/' + job.healthReport[0].iconUrl)
+                        if job.healthReport
+                            small(class='healthcheck')= job.healthReport[0].description
                         
 
 script.

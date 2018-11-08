@@ -14,6 +14,7 @@ const orders = [
 const hiddenStatuses = ['blue', 'blue_anime', 'notbuilt', 'disabled'];
 
 function sorter (jobs) {
+
     jobs = jobs
     .map((job) => {
         const jobNameArray = job.name.toLowerCase().split('_');
@@ -26,15 +27,10 @@ function sorter (jobs) {
                 }
             });
         });
-        
+
         return job;
     })
-    .filter((item) => {
-        if (!hiddenStatuses.includes(item.color)) {
-            return item;
-        }
-        return false;
-    });
+    .filter((item) => !hiddenStatuses.includes(item.color));
 
     return jobs.sort((a,b) => a.order - b.order).reverse();
 }
