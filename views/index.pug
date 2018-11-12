@@ -21,9 +21,9 @@ html
                     div(class='job-status')
                         strong(class='job-name')
                             =job.jobName 
-                            if job.healthReport
+                            if job.healthReport[0] && job.healthReport[0].iconUrl
                                 img(src='http://10.216.99.56:8080/static/2ade8cde/images/32x32/' + job.healthReport[0].iconUrl)
-                        if job.healthReport
+                        if job.healthReport[0] && job.healthReport[0].description
                             small(class='healthcheck')= job.healthReport[0].description
                         
 

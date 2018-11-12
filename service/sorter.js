@@ -11,7 +11,7 @@ const orders = [
     {order: -30,   rules: ['features-regression']},
     {order: -100,   rules: ['oddsstore-portal']}
 ];
-const hiddenStatuses = ['blue', 'blue_anime', 'notbuilt', 'disabled'];
+const hiddenStatuses = ['blue', 'blue_anime', 'notbuilt', 'notbuilt_anime', 'disabled'];
 
 function sorter (jobs) {
 
