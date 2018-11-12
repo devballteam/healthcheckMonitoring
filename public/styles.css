@@ -68,6 +68,10 @@ li {
 .badge-env-Dev2 {
     background-color: #965A38;
 }
+.alert-success {
+    padding: 30px 15px;
+    font-size: 26px;
+}
 .alert-success strong {
     margin-right: 5px;
 }
