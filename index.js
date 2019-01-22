@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const port = 8090;
 
-const additionalParams = '?tree=jobs[name,color,healthReport[description,score,iconUrl]]';
+const additionalParams = '?tree=jobs[name,color,description,healthReport[description,score,iconUrl]]';
 const qaJenkinsUrl     = `http://qajenkins3.ptv.com:8080/view/Devball/api/json${additionalParams}`; //move to config?
 const mtpJenkinsUrl    = `http://10.216.99.56:8080/view/Devball/api/json${additionalParams}`;
 const atgraJenkinsUrl  = `http://atgrabuild01.runningball.local:8080/view/DEVBALL/api/json${additionalParams}`;

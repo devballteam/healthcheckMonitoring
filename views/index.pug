@@ -20,15 +20,16 @@ html
                     span(class='badge badge-pill badge-primary badge-env-' + job.environment)= job.environment
                     div(class='job-status')
                         strong(class='job-name')
-                            =job.jobName 
+                            =job.jobName
                             if job.healthReport[0] && job.healthReport[0].iconUrl
                                 img(src='http://10.216.99.56:8080/static/2ade8cde/images/32x32/' + job.healthReport[0].iconUrl)
-                        if job.healthReport[0] && job.healthReport[0].description
+                        if job.description
+                            small(class='healthcheck')= job.description
+                        else if job.healthReport[0] && job.healthReport[0].description
                             small(class='healthcheck')= job.healthReport[0].description
-                        
+
 
 script.
     setInterval(() => {
-        window.location.reload(false); 
+        window.location.reload(false);
     }, 2000)
-    

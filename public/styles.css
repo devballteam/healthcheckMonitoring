@@ -33,6 +33,9 @@ li {
 .aborted {
     background: #F2953F;
 }
+.known_issue {
+    background: #375a7f;
+}
 .blue_anime, .red_anime {
     -webkit-animation: progress-bar-stripes 1s linear infinite;
     animation: progress-bar-stripes 1s linear infinite;

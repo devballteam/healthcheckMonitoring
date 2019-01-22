@@ -18,6 +18,9 @@ function decorator (jobs) {
         job.project = project;
         job.environment = environment;
 
+        // set different color when issue is known and description provided
+        job.color = !job.description ? job.color : 'known_issue';
+
         return job;
     });
 
