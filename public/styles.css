@@ -36,6 +36,11 @@ li {
 .known_issue {
     background: #375a7f;
 }
+.known_issue_desc {
+    font-size: 18px;
+    display:block;
+    margin-top: -5px;
+}
 .blue_anime, .red_anime {
     -webkit-animation: progress-bar-stripes 1s linear infinite;
     animation: progress-bar-stripes 1s linear infinite;
@@ -48,9 +53,8 @@ li {
     margin-top:-10px;
 }
 .job-name {
-    font-size: 30px;
+    font-size: 26px;
     display: block;
-    margin-bottom: -5px;
 }
 .job-name img {
     margin-left: 10px;

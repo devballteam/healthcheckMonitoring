@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const port = 8090;
+const port = process.env.PORT || 8090;
 
 const additionalParams = '?tree=jobs[name,color,description,healthReport[description,score,iconUrl]]';
 const qaJenkinsUrl     = `http://qajenkins3.ptv.com:8080/view/Devball/api/json${additionalParams}`; //move to config?
