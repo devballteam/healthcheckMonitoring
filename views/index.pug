@@ -23,8 +23,8 @@ html
                             =job.jobName
                             if job.healthReport[0] && job.healthReport[0].iconUrl
                                 img(src='http://10.216.99.56:8080/static/2ade8cde/images/32x32/' + job.healthReport[0].iconUrl)
-                        if job.description
-                            small(class='healthcheck known_issue_desc')= job.description
+                        if job.known_issue
+                            small(class='healthcheck known_issue_desc')= job.known_issue
                         else if job.healthReport[0] && job.healthReport[0].description
                             small(class='healthcheck')= job.healthReport[0].description
 

@@ -1,0 +1,31 @@
+{
+  "sort_rules": [
+    {"order": 100, "rules": ["prod", "prs"]},
+    {"order": 90, "rules": ["ost"]},
+    {"order": 80, "rules": ["api"]},
+    {"order": 70, "rules": ["portal"]},
+    {"order": 50, "rules": ["stage", "preprod"]},
+    {"order": 40, "rules": ["wab-portal", "wbportal", "rb-portal", "pp2", "proportal2"]},
+    {"order": 5, "rules": ["dev"]},
+    {"order": -30, "rules": ["features-regression"]},
+    {"order": -100, "rules": ["oddsstore-portal"]}
+  ],
+  "dictionary": {
+    "Status-Portal": "Portal",
+    "Status-API": "API",
+    "Status-Rabbit": "RabbitMQ",
+    "Status-API-FL": "API Fixtures List",
+    "Status-DB": "Database",
+    "Status-WS": "Websocket",
+    "Features-Regression": "Regression"
+  },
+  "jenkins": {
+    "endpoints": [
+      "http://qajenkins3.ptv.com:8080/view/Devball/api/json",
+      "http://10.216.99.56:8080/view/Devball/api/json",
+      "http://atgrabuild01.runningball.local:8080/view/DEVBALL/api/json"
+    ],
+    "filters": "?tree=jobs[name,color,description,healthReport[description,score,iconUrl]]"
+  },
+  "displayDescription": true
+}

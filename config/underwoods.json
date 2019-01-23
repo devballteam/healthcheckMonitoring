@@ -1,0 +1,15 @@
+{
+  "sort_rules": [
+    {"order": 100, "rules": ["prod"]},
+    {"order": 50, "rules": ["stage", "preprod"]},
+    {"order": 5, "rules": ["dev"]}
+  ],
+  "dictionary": {},
+  "jenkins": {
+    "endpoints": [
+      "http://qajenkins3.ptv.com:8080/view/ByProduct/view/Opta/api/json"
+    ],
+    "filters": "?tree=jobs[name,color,description,healthReport[description,score,iconUrl]]"
+  },
+  "displayDescription": false
+}

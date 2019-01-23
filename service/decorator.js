@@ -1,16 +1,8 @@
 'use strict';
 
-const dictionary = {
-    'Status-Portal': 'Portal',
-    'Status-API': 'API',
-    'Status-Rabbit': 'RabbitMQ',
-    'Status-API-FL': 'API Fixtures List',
-    'Status-DB': 'Database',
-    'Status-WS': 'Websocket',
-    'Features-Regression': 'Regression'
-};
+function decorator (jobs, config) {
+    const dictionary = config.dictionary || {};
 
-function decorator (jobs) {
     jobs.map((job) => {
         const [project,jobName,environment] = job.name.split('_');
 
@@ -19,7 +11,10 @@ function decorator (jobs) {
         job.environment = environment;
 
         // set different color when issue is known and description provided
-        job.color = !job.description ? job.color : 'known_issue';
+        if (config.displayDescription) {
+            job.color = job.description ? 'known_issue' : job.color;
+            job.known_issue = job.description ? job.description : '';
+        }
 
         return job;
     });

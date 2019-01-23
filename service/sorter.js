@@ -1,19 +1,8 @@
 'use strict';
 
-const orders = [
-    {order: 100, rules: ['prod', 'prs']},
-    {order: 90,  rules: ['ost']},
-    {order: 80,  rules: ['api']},
-    {order: 70,  rules: ['portal']},
-    {order: 50,  rules: ['stage', 'preprod']},
-    {order: 40,  rules: ['wab-portal', 'wbportal', 'rb-portal', 'pp2', 'proportal2']},
-    {order: 5,   rules: ['dev']},
-    {order: -30,   rules: ['features-regression']},
-    {order: -100,   rules: ['oddsstore-portal']}
-];
 const hiddenStatuses = ['blue', 'blue_anime', 'notbuilt', 'notbuilt_anime', 'disabled'];
 
-function sorter (jobs) {
+function sorter (jobs, orders) {
 
     jobs = jobs
     .map((job) => {

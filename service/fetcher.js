@@ -2,10 +2,13 @@
 
 const fetch = require("node-fetch");
 
-async function fetcher (urls) {
+async function fetcher (jenkins_config) {
+
     try {
-        const [qa, mtp, build] = await Promise.all(urls.map(url => fetch(url).then((response) => response.json())));
-        return [...qa.jobs, ...mtp.jobs, ...build.jobs];
+        const responses = await Promise.all(jenkins_config.endpoints.map(url => fetch(url + jenkins_config.filters).then((response) => response.json())));
+        const mapped = responses.map(response => response.jobs);
+
+        return [].concat.apply([], mapped);
     } catch (error) {
         console.warn(error);
     }
