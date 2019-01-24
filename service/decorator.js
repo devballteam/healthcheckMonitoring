@@ -3,7 +3,7 @@
 function decorator (jobs, config) {
     const dictionary = config.dictionary || {};
 
-    jobs.map((job) => {
+    jobs = jobs.map((job) => {
         const [project,jobName,environment] = job.name.split('_');
 
         job.jobName = dictionary[jobName] || jobName;
@@ -17,7 +17,7 @@ function decorator (jobs, config) {
         }
 
         return job;
-    });
+    }).filter((job) => job.color !== undefined);
 
     return jobs;
 }
