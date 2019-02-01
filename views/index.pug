@@ -17,7 +17,7 @@ html
             each job in jobs.length ? jobs : ['There are no values']
                 li(class=job.color data-order=job.order)
                     span(class='badge badge-pill badge-light')= job.project
-                    span(class='badge badge-pill badge-primary badge-env-' + job.environment)= job.environment
+                    span(class='badge badge-pill badge-primary badge-env-' + job.env_class)= job.environment
                     div(class='job-status')
                         strong(class='job-name')
                             =job.jobName
