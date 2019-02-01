@@ -7,35 +7,16 @@ html
   body
     nav(class='navbar navbar-dark bg-dark')
         h1='DEVBALL Monitoring'
-        span= '"' + qoute + '"'
+        p(class='qoute')
     main(class='container-fluid')
+    div(class='errors')
+        p(class='hidden alert alert-danger')
 
-    if errors.length
-        each errorMessage in errors
-            p(class='alert alert-danger')= errorMessage
+    p(class='hidden alert alert-success')
+        strong='GUD!'
+        ='All Jenkins jobs are green!'
 
-    if !jobs.length
-        p(class='alert alert-success')
-            strong='GUD!'
-            ='All Jenkins jobs are green!'
-    else
-        ul
-            each job in jobs.length ? jobs : ['There are no values']
-                li(class=job.color data-order=job.order)
-                    span(class='badge badge-pill badge-light')= job.project
-                    span(class='badge badge-pill badge-primary badge-env-' + job.env_class)= job.environment
-                    div(class='job-status')
-                        strong(class='job-name')
-                            =job.jobName
-                            if job.healthReport[0] && job.healthReport[0].iconUrl
-                                img(src='http://10.216.99.56:8080/static/2ade8cde/images/32x32/' + job.healthReport[0].iconUrl)
-                        if job.known_issue
-                            small(class='healthcheck known_issue_desc')= job.known_issue
-                        else if job.healthReport[0] && job.healthReport[0].description
-                            small(class='healthcheck')= job.healthReport[0].description
+    ul(class='jobs')
 
-
-script.
-    setInterval(() => {
-        window.location.reload(false);
-    }, 2000)
+script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+script(src='main.js')

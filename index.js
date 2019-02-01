@@ -13,16 +13,29 @@ app.set('view engine', 'pug');
 app.use(express.static(require('path').join(__dirname, 'public')));
 
 app.get('/', async (req, res) => {
-    const team = req.query.team || 'devball';
+    return res.render('index', {
+        team: req.query.team || 'devball'
+    });
+});
+
+app.get('/jobs', async (req, res) => {
+    const team   = req.query.team || 'devball';
     const config = require(`${process.cwd()}/config/${team}`);
 
     const fetcherResponse   = await fetcher(config.jenkins);
     const sorterResponse    = await sorter(fetcherResponse[0], config.sort_rules);
     const decoratorResponse = await decorator(sorterResponse, config);
-    const funnyQuote        = await fetch('https://geek-jokes.sameerkumar.website/api');
 
+    return res.json({
+        jobs: decoratorResponse,
+        errors: fetcherResponse[1]
+    });
+});
 
-    return res.render('index', {jobs: decoratorResponse, errors: fetcherResponse[1], qoute: await funnyQuote.json()});
+app.get('/qoute', async (req, res) => {
+    const funnyQuote = await fetch('https://geek-jokes.sameerkumar.website/api');
+
+    return res.send(await funnyQuote.json());
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

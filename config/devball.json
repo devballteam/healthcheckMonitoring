@@ -21,7 +21,7 @@
   },
   "jenkins": {
     "endpoints": [
-      "http://qajenkins3.ptv.com:8080/view/Devball/api/json",
+      "http://qajenkins3.ptv.com:8080/view/Devball/api/jsonss",
       "http://10.216.99.56:8080/view/Devball/api/json",
       "http://atgrabuild01.runningball.local:8080/view/DEVBALL/api/json"
     ],
