@@ -1,5 +1,6 @@
 h1 {
     font-size: 1.5em;
+    margin-top: 10px;
 }
 .container-fluid {
     padding: 0;
@@ -73,9 +74,14 @@ li {
     background-color: #965A38;
 }
 
+.alert-danger,
 .alert-success {
     padding: 30px 15px;
     font-size: 26px;
+}
+.alert-danger {
+    font-size: 18px;
+    margin-top:30px;
 }
 .alert-success strong {
     margin-right: 5px;
