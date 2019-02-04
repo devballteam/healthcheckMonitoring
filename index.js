@@ -1,7 +1,6 @@
 'use strict';
 
 const express = require('express');
-const fetch   = require("node-fetch");
 const app     = express();
 const port    = process.env.PORT || 8090;
 
@@ -30,12 +29,6 @@ app.get('/jobs', async (req, res) => {
         jobs: decoratorResponse,
         errors: fetcherResponse[1]
     });
-});
-
-app.get('/qoute', async (req, res) => {
-    const funnyQuote = await fetch('https://geek-jokes.sameerkumar.website/api');
-
-    return res.send(await funnyQuote.json());
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

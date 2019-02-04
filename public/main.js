@@ -34,7 +34,7 @@ const jobs = function () {
   return $.ajax({url: '/jobs'})
     .done(function(response) {
       $('.jobs li').remove();
-      $('.errors p:not(hidden)').remove();
+      $(".errors p").remove();
       if (response.errors.length) {
         response.errors.forEach((error) => {
           $('.errors p').clone().html(error).appendTo('.errors').removeClass('hidden');
