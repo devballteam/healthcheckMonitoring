@@ -12,9 +12,7 @@ app.set('view engine', 'pug');
 app.use(express.static(require('path').join(__dirname, 'public')));
 
 app.get('/', async (req, res) => {
-    return res.render('index', {
-        team: req.query.team || 'devball'
-    });
+    return res.render('index');
 });
 
 app.get('/jobs', async (req, res) => {

@@ -23,15 +23,10 @@ const jobTemplate = function (job) {
   `;
 }
 
-const qoute = function () {
-  return $.ajax({url: '/qoute'})
-    .done(function(response) {
-      $('.qoute').html(response);
-    });
-};
-
 const jobs = function () {
-  return $.ajax({url: '/jobs'})
+  const urlParams = new URLSearchParams(window.location.search);
+  const teamParam = urlParams.get('team') || 'devball';
+  return $.ajax({url: '/jobs?team='+teamParam})
     .done(function(response) {
       $('.jobs li').remove();
       $(".errors p").remove();
@@ -50,7 +45,5 @@ const jobs = function () {
 };
 
 jobs();
-qoute();
 
-setInterval(qoute, 10000);
-setInterval(jobs, 2000);
+setInterval(jobs, 5000);
