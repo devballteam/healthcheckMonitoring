@@ -9,11 +9,15 @@ h1 {
 ul {
     padding: 2px;
 }
+
 li {
-    list-style: none;
-    padding: 10px 15px 10px 0;
-    margin: 10px 0;
-    color: white;
+  align-items: center;
+  color: white;
+  display: flex;  
+  justify-content: space-between;
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px 15px 10px 0;
 }
 
 .disabled,
@@ -58,7 +62,6 @@ li {
 }
 .job-status {
     text-align: right;
-    float: right;
     margin-top:-10px;
 }
 .job-name {
@@ -79,6 +82,11 @@ li {
 }
 .badge-env-dev {
     background-color: #965A38;
+}
+
+.left {
+    display: inline-flex;
+    flex-wrap: nowrap;
 }
 
 .alert-danger,

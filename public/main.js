@@ -13,8 +13,10 @@ const jobTemplate = function (job) {
 
   return `
     <li class="${job.color}" data-order="${job.order}">
-      <span class="badge badge-pill badge-light">${job.project}</span>
-      <span class="badge badge-pill badge-primary badge-env-${job.env_class}">${job.environment}</span>
+      <div class="left">
+        <span class="badge badge-pill badge-light">${job.project}</span>
+        <span class="badge badge-pill badge-primary badge-env-${job.env_class}">${job.environment}</span>
+      </div>
       <div class="job-status">
         <strong class="job-name">${job.jobName}${healthReport}</strong>
         ${description}
